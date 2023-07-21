@@ -1,4 +1,7 @@
 <?php
+
+use App\Config\DbConfig;
+use App\Db\ConnectionDb;
 use App\Library\Router;
 
 try{
@@ -17,25 +20,10 @@ try{
     var_dump($e->getMessage().' '.$e->getFile().' '.$e->getLine());
 }
 
-/*const TEXT_PARAMS_IN_ROUTE = '{params}';
 
-var_dump(getParamsInUri('user/edit/4'));
 
-function getParamsInUri($route): array
-{
-  if (is_string($route)) {
+$conn = new ConnectionDb();
 
-    $explodeurl = array_filter(explode('/', $route));
-
-    $paramsPosition = array_search(TEXT_PARAMS_IN_ROUTE, $explodeurl);
-
-    $params = array_filter(explode('/', $_SERVER['REQUEST_URI']));
-
-    return $params;//[$params[$paramsPosition]];
-  }
-
-  return [$params = null];
-}*/
-
+var_dump($conn->conn());
 
 
